@@ -39,7 +39,7 @@ privacyEnhanced = true
 [params]
 author = "Pablo San Jose"
 avatar = "avatar.jpg"
-description = "Tales of a young software engineer"
+description = "My personal website and blog. Welcome!"
 email = "mailto:hi@pablosanjose.com?subject=Hi!"
 github = "https://github.com/pablosjv"
 keywords = "software development, software, machine learning, python, data engineer, golang, devops, go"
