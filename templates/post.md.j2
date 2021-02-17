@@ -1,7 +1,7 @@
 ---
 title: "{{ content.title }}"
 date: {{ content.date }}
-draft: {{ content.draft }}
+draft: {{ content.draft | string | lower }}
 slug: {{ content.slug }}
 city: {{ content.city }}
 toc: true
