@@ -1,0 +1,10 @@
+DirectoryPath: "site"
+IgnoreURLs:
+  - m.pablosanjose.com
+  - amzn.to
+IgnoreDirs: []
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreAltMissing: true
+HTTPHeaders:
+  "Range": "bytes=0-10"
+  "Accept": "*/*"

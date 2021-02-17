@@ -1,0 +1,8 @@
+---
+title: "{{ content.title }}"
+type: page
+---
+
+{% for content_block in content.blocks %}
+{{ content_block }}
+{% endfor %}

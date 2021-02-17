@@ -41,9 +41,11 @@ author = "Pablo San Jose"
 avatar = "avatar.jpg"
 description = "My personal website and blog. Welcome!"
 email = "mailto:hi@pablosanjose.com?subject=Hi!"
-github = "https://github.com/pablosjv"
+github = "https://bit.ly/github-pablosjv"
+iconOrder = ["email", "linkedin", "GitHub"]
 keywords = "software development, software, machine learning, python, data engineer, golang, devops, go"
-linkedin = "https://www.linkedin.com/in/pablo-sanjose-villar/"
+linkedin = "https://bit.ly/linkedin-pablosjv"
+stackexchange = "https://bit.ly/stackoverflow-pablosjv"
 
 [menu]
 [[menu.main]]
@@ -51,11 +53,19 @@ identifier = "home"
 name = "Home"
 url = "/"
 weight = 10
+
 [[menu.main]]
 identifier = "posts"
 name = "Posts"
 url = "/posts/"
 weight = 20
+
+[[menu.main]]
+identifier = "resume"
+name = "Resume"
+url = "/resume/"
+weight = 30
+
 [[menu.main]]
 identifier = "about"
 name = "About"

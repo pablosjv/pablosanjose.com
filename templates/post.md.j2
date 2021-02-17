@@ -1,0 +1,16 @@
+---
+title: "{{ content.title }}"
+date: {{ content.date }}
+draft: {{ content.draft }}
+slug: {{ slug }}
+city: {{ city }}
+toc: true
+tags:
+{%- for tag in content.tags %}
+- {{ tag }}
+{% endfor %}
+---
+
+{% for content_block in content.blocks %}
+{{ content_block }}
+{% endfor %}
