@@ -2,8 +2,8 @@
 title: "My blog is live!"
 date: 2021-02-18
 draft: False
-slug: 
-city: 
+slug: my-blog-is-live
+city: Madrid
 toc: true
 tags:
 - update
