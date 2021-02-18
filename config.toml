@@ -2,7 +2,8 @@ disableAliases = true
 
 #### Tamplate ####
 # DO NOT REMOVE THIS
-theme = "hugo-theme-codex"
+# theme = "hugo-theme-codex"
+theme = "codex"
 
 # Override these settings with your own
 baseURL = "https://pablosanjose.com/"
@@ -48,7 +49,7 @@ iconOrder = ["Email", "LinkedIn", "GitHub"]
 # twitterAuthor = "@<your handle>"
 
 # Set to true to display page title in table of contents in blog posts.
-showPageTitleInTOC = false
+showPageTitleInTOC = true
 
 # This disables Hugo's default syntax highlighting in favor
 # of prismjs. If you wish to use Hugo's default syntax highlighting
@@ -56,12 +57,12 @@ showPageTitleInTOC = false
 # vendor script in layouts/blog/single.html.
 [markup]
 [markup.highlight]
-codeFences = false
-# codeFences = true
-# guessSyntax = true
-# noClasses = true
-# style = "dracula"
-# tabWidth = 2
+# codeFences = false
+codeFences = true
+guessSyntax = true
+noClasses = true
+style = "dracula"
+tabWidth = 2
 
 # Set to false to disallow raw HTML in markdown files
 [markup.goldmark.renderer]
