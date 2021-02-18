@@ -14,7 +14,7 @@ setup: .venv
 	.venv/bin/pip install -r requirements.txt
 
 run:
-	hugo server --watch --buildFuture --cleanDestinationDir
+	hugo server --verbose --watch --buildFuture --cleanDestinationDir
 
 ci: refresh
 	hugo

@@ -10,8 +10,9 @@ from urllib.parse import urlparse
 
 import requests
 from jinja2 import Environment, FileSystemLoader
-from notion.block import (BulletedListBlock, CodeBlock, DividerBlock, HeaderBlock, ImageBlock, NumberedListBlock,
-                          SubheaderBlock, SubsubheaderBlock, TextBlock, TodoBlock, ToggleBlock)
+from notion.block import (BulletedListBlock, CalloutBlock, CodeBlock, DividerBlock, HeaderBlock, ImageBlock,
+                          NumberedListBlock, QuoteBlock, SubheaderBlock, SubsubheaderBlock, TextBlock, TodoBlock,
+                          ToggleBlock)
 from notion.client import NotionClient
 
 logging.basicConfig(
@@ -56,7 +57,7 @@ def download_image(
 
 
 def generate_image_block(image_block: ImageBlock):
-    caption = image_block.caption
+    caption = image_block.caption.replace('"', '\\"')
     image_folder = image_block.parent.title.lower().replace(' ', '-')
     image_folder = f"public/images/{image_folder}"
     reference_image_file = download_image(image_block.source, image_folder)
@@ -104,8 +105,16 @@ def generate_divider_block(divider_block: DividerBlock):
 def generate_toggle_block(toggle_block: ToggleBlock):
     text = f"\n- {toggle_block.title}"
     for b in toggle_block.children:
-        text += f"    {block_parse_func[b.type](b)}\n"
+        text += f" \n   {block_parse_func[b.type](b)}"
     return text
+
+
+def generate_quote_block(quote_block: QuoteBlock):
+    return f"> {quote_block.title}"
+
+
+def generate_callout_block(callout_block: CalloutBlock):
+    return f"> {callout_block.icon} {callout_block.title}"
 
 
 # NOTE: implement using pattern matching
@@ -121,6 +130,8 @@ block_parse_func = {
     "to_do": generate_todo_block,
     "divider": generate_divider_block,
     "toggle": generate_toggle_block,
+    "quote": generate_quote_block,
+    "callout": generate_callout_block,
 }
 
 
@@ -163,6 +174,7 @@ def main():
         for block in record.children:
             if block.type not in block_parse_func:
                 logging.warning(f'No implemented {block}')
+                logging.warning(block.type)
             else:
                 block_text = block_parse_func[block.type](block)
                 content.blocks.append(block_text)

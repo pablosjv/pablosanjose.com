@@ -1,18 +1,93 @@
-baseurl = "https://pablosanjose.com/"
-copyright = "Pablo San Jose - 2021 - {year}"
-languageCode = "en-us"
-theme = "codex"
-title = "Pablo San Jose"
-
 disableAliases = true
 
+#### Tamplate ####
+# DO NOT REMOVE THIS
+# theme = "hugo-theme-codex"
+theme = "codex"
+
+# Override these settings with your own
+baseURL = "https://pablosanjose.com/"
+copyright = "Pablo San Jose© {year}"
+languageCode = "en-us"
+title = "Pablo San Jose"
+
+# Add your Disqus shortname here.
+# disqusShortname = ""
+
+# Add your Google Analytics identifier: UA-XXXXXXXX-X
+# googleAnalytics = ""
+
+# Optional params
+[params]
+# Follow the Hugo date/time format reference here:
+# https://gohugo.io/functions/format/#gos-layout-string
+author = "Pablo San Jose"
+avatar = "avatar.jpg"
+dateFormat = "Jan 2 2006"
+description = "My personal website and blog. Welcome!"
+keywords = "software development, software, machine learning, python, data engineer, golang, devops, go"
+
+# Links to your social accounts, comment/uncomment as needed. Icons will be displayed for those specified.
+email = "mailto:hi@pablosanjose.com?subject=Hi!"
+github = "https://bit.ly/github-pablosjv"
+linkedin = "https://bit.ly/linkedin-pablosjv"
+stackexchange = "https://bit.ly/stackoverflow-pablosjv"
+# twitter = "https://twitter.com/<your handle>"
+# mastodon = "https://mastodon.social/@nickname"
+# facebook = "https://facebook.com/<your handle>"
+# gitlab = "https://gitlab.com/<your handle>"
+# instagram = "https://instagram.com/<your handle>"
+# youtube = "https://www.youtube.com/channel/<your channel>"
+
+# Titles for your icons (shown as tooltips), and also their display order.
+# Currently, these icons are supported:
+#   "Twitter", "GitHub", "Email", "Mastodon", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
+iconOrder = ["Email", "LinkedIn", "GitHub"]
+
+# Metadata for Twitter cards, defaults to params.twitter
+# twitterSite = "@<your handle>"
+# twitterAuthor = "@<your handle>"
+
+# Set to true to display page title in table of contents in blog posts.
+showPageTitleInTOC = true
+
+# This disables Hugo's default syntax highlighting in favor
+# of prismjs. If you wish to use Hugo's default syntax highlighting
+# over prismjs, remove this. You will also need to remove the prismjs
+# vendor script in layouts/blog/single.html.
 [markup]
 [markup.highlight]
+# codeFences = false
 codeFences = true
 guessSyntax = true
 noClasses = true
 style = "dracula"
 tabWidth = 2
+
+# Set to false to disallow raw HTML in markdown files
+[markup.goldmark.renderer]
+unsafe = true
+
+# Controls the navigation
+[[menu.main]]
+identifier = "about"
+name = "about"
+title = "About"
+url = "/"
+
+[[menu.main]]
+identifier = "posts"
+name = "posts"
+title = "Posts"
+url = "/posts"
+
+[[menu.main]]
+identifier = "resume"
+name = "resume"
+title = "Resume"
+url = "/resume"
+
+#### Other not in template
 
 [related]
 includeNewer = true
@@ -23,8 +98,8 @@ toLower = true
 name = "keywords"
 weight = 10
 
-[permalinks]
-post = "/posts/:slug"
+# [permalinks]
+# post = "/posts/:slug"
 
 [privacy]
 [privacy.googleAnalytics]
@@ -36,41 +111,5 @@ enableDNT = true
 [privacy.youtube]
 privacyEnhanced = true
 
-[params]
-author = "Pablo San Jose"
-avatar = "avatar.jpg"
-description = "My personal website and blog. Welcome!"
-email = "mailto:hi@pablosanjose.com?subject=Hi!"
-github = "https://bit.ly/github-pablosjv"
-iconOrder = ["email", "linkedin", "GitHub"]
-keywords = "software development, software, machine learning, python, data engineer, golang, devops, go"
-linkedin = "https://bit.ly/linkedin-pablosjv"
-stackexchange = "https://bit.ly/stackoverflow-pablosjv"
-
-[menu]
-[[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
-weight = 10
-
-[[menu.main]]
-identifier = "posts"
-name = "Posts"
-url = "/posts/"
-weight = 20
-
-[[menu.main]]
-identifier = "resume"
-name = "Resume"
-url = "/resume/"
-weight = 30
-
-[[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about/"
-weight = 40
-
-[outputs]
-home = ["HTML", "RSS"]
+# [outputs]
+# home = ["HTML", "RSS"]
