@@ -93,17 +93,17 @@ __*August 2019 - July 2021*__
 GPA: 3.87/4.0
 
 
-- Course list    * ISYE 6501: Introduction to Analytics Modeling
-    * CSE 6040: Computing for Data Analytics
-    * MGT 8803: Business Fundamentals for Analytics
-    * CSE 6242: Data and Visual Analytics
-    * MGT 6203: Data Analytics in Business
-    * ISYE 6740: Computational Data Analysis
-    * CSE 6250: Big Data for Health Care
-    * ISYE 6414: Regression Analysis
-    * CS 7646: Machine Learning for Trading
-    * ISYE 6669: Deterministic Optimization
-
+- Course list 
+   * ISYE 6501: Introduction to Analytics Modeling 
+   * CSE 6040: Computing for Data Analytics 
+   * MGT 8803: Business Fundamentals for Analytics 
+   * CSE 6242: Data and Visual Analytics 
+   * MGT 6203: Data Analytics in Business 
+   * ISYE 6740: Computational Data Analysis 
+   * CSE 6250: Big Data for Health Care 
+   * ISYE 6414: Regression Analysis 
+   * CS 7646: Machine Learning for Trading 
+   * ISYE 6669: Deterministic Optimization
 
 ## **[Universidad Politécnica de Madrid](https://www.etsisi.upm.es/)** 
 

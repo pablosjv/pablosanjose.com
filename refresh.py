@@ -104,7 +104,7 @@ def generate_divider_block(divider_block: DividerBlock):
 def generate_toggle_block(toggle_block: ToggleBlock):
     text = f"\n- {toggle_block.title}"
     for b in toggle_block.children:
-        text += f"    {block_parse_func[b.type](b)}\n"
+        text += f" \n   {block_parse_func[b.type](b)}"
     return text
 
 
