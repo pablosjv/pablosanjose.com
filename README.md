@@ -1,5 +1,10 @@
 # [pablosanjose.com](https://pablosanjose.com)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/pablosjv/pablosanjose.com?logo=hey)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/pablosjv/pablosanjose.com/build)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/pablosjv/pablosanjose.com/refresh)
+
+
 Source code for the static website [pablosanjose.com](https://pablosanjose.com), where I host my resume and other stuff.
 
 Posts actually are written on [Notion](https://notion.so) and synced to markdown
