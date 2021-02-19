@@ -23,20 +23,25 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
           submodules: "recursive"
+          ref: ${{ github.head_ref }}
 
-      - uses: peaceiris/actions-hugo@v2
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.80.0"
           extended: true
 
-      - uses: actions/setup-python@v2
+      - name: Install python and dependencies
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9" # Version range or exact version of a Python version to use, using SemVer's version range syntax
 
-      - run: make setup ci
+      - name: Test and build
+        run: make setup ci
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           BLOG_COLLECTION_ID: ${{ secrets.BLOG_COLLECTION_ID }}

@@ -12,19 +12,26 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
+          ref: ${{ github.head_ref }}
           submodules: "recursive"
-      - uses: actions/setup-python@v2
+
+      - name: Install python and dependencies
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9" # Version range or exact version of a Python version to use, using SemVer's version range syntax
-      - run: make setup refresh
+
+      - name: Refresh Notion pages
+        run: make setup refresh
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           BLOG_COLLECTION_ID: ${{ secrets.BLOG_COLLECTION_ID }}
           BLOG_COLLECTION_VIEW_ID: ${{ secrets.BLOG_COLLECTION_VIEW_ID }}
           OTHER_COLLECTION_ID: ${{ secrets.OTHER_COLLECTION_ID }}
           OTHER_COLLECTION_VIEW_ID: ${{ secrets.OTHER_COLLECTION_VIEW_ID }}
+
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v4.8.0
         with:
