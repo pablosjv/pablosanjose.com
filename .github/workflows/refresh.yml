@@ -2,8 +2,7 @@ name: refresh
 
 on:
   push:
-    branches:
-      - "master"
+    branches: [master]
   schedule:
     - cron: "0 0 */1 * *"
 
@@ -25,8 +24,6 @@ jobs:
           OTHER_COLLECTION_ID: ${{ secrets.OTHER_COLLECTION_ID }}
           OTHER_COLLECTION_VIEW_ID: ${{ secrets.OTHER_COLLECTION_VIEW_ID }}
       - uses: stefanzweifel/git-auto-commit-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           commit_message: "chore: refresh with notion"
           branch: master
