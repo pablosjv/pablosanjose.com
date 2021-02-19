@@ -24,7 +24,7 @@ logging.basicConfig(
 
 
 @dataclass
-class Content():
+class Page():
     title: str
     slug: str = ""
     date: datetime.date = datetime.now()
@@ -135,15 +135,15 @@ block_parse_func = {
 }
 
 
-def save_content(content: Content, entry_type: str = 'post'):
+def save_content(page: Page, entry_type: str = 'post'):
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template(f'{entry_type}.md.j2')
-    output_from_parsed_template = template.render(content=content)
+    output_from_parsed_template = template.render(page=page)
     conten_paths = {
         'post': 'content/posts',
         'page': 'content',
     }
-    with open(f"{conten_paths[entry_type]}/{content.filename}.md", "w") as f:
+    with open(f"{conten_paths[entry_type]}/{page.filename}.md", "w") as f:
         f.write(output_from_parsed_template)
 
 
@@ -166,7 +166,7 @@ def main():
         if not record.title:
             logging.info("Emtpy record. Consider removing it")
             continue
-        content = Content(
+        page = Page(
             title=record.title,
             slug=record.slug,
             date=record.date.start,
@@ -180,8 +180,8 @@ def main():
                 logging.warning(block.type)
             else:
                 block_text = block_parse_func[block.type](block)
-                content.blocks.append(block_text)
-        save_content(content, entry_type='post')
+                page.blocks.append(block_text)
+        save_content(page, entry_type='post')
 
     logging.info('Querying other pages database')
     cv = client.get_collection_view(
@@ -189,13 +189,13 @@ def main():
     database_records = cv.default_query().execute()
     for record in database_records:
         logging.info(f'Geting record: {record.title}')
-        content = Content(
+        page = Page(
             title=record.title
         )
         for block in record.children:
             block_text = block_parse_func[block.type](block)
-            content.blocks.append(block_text)
-        save_content(content, entry_type='page')
+            page.blocks.append(block_text)
+        save_content(page, entry_type='page')
 
 
 if __name__ == '__main__':

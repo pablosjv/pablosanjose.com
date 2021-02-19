@@ -1,16 +1,16 @@
 ---
-title: "{{ content.title }}"
-date: {{ content.date }}
-draft: {{ content.draft | string | lower }}
-slug: {{ content.slug }}
-city: {{ content.city }}
+title: "{{ page.title }}"
+date: {{ page.date }}
+draft: {{ page.draft | string | lower }}
+slug: {{ page.slug }}
+city: {{ page.city }}
 toc: true
 tags:
-{%- for tag in content.tags %}
+{%- for tag in page.tags %}
 - {{ tag }}
 {% endfor %}
 ---
 
-{% for content_block in content.blocks %}
+{% for content_block in page.blocks %}
 {{ content_block }}
 {% endfor %}
