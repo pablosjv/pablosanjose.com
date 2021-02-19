@@ -25,7 +25,9 @@ jobs:
           BLOG_COLLECTION_VIEW_ID: ${{ secrets.BLOG_COLLECTION_VIEW_ID }}
           OTHER_COLLECTION_ID: ${{ secrets.OTHER_COLLECTION_ID }}
           OTHER_COLLECTION_VIEW_ID: ${{ secrets.OTHER_COLLECTION_VIEW_ID }}
-      - uses: stefanzweifel/git-auto-commit-action
+      - uses: stefanzweifel/git-auto-commit-action@v2
         with:
           commit_message: "chore: refresh with notion"
           branch: master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
