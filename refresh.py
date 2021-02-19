@@ -163,6 +163,9 @@ def main():
     database_records = cv.default_query().execute()
     for record in database_records:
         logging.info(f'Geting record: {record.title}')
+        if not record.title:
+            logging.info("Emtpy record. Consider removing it")
+            continue
         content = Content(
             title=record.title,
             slug=record.slug,
