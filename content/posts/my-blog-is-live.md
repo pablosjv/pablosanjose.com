@@ -15,7 +15,7 @@ Hi! This is my first blog post entry. Officially we are live!
 
 I created this blog using hugo, vercel, and notion. 
 
-I am eager to told you more about how I made it, but you will have to wait. This page will be refreshed with the updated content.
+In the next post, I will go into detail about how I done and how can you made it yourself.
 
 See you soon!
 
