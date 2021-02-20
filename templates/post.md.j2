@@ -6,9 +6,9 @@ slug: {{ page.slug }}
 city: {{ page.city }}
 toc: true
 tags:
-{%- for tag in page.tags %}
+{% for tag in page.tags -%}
 - {{ tag }}
-{% endfor %}
+{% endfor -%}
 ---
 
 {% for content_block in page.blocks %}

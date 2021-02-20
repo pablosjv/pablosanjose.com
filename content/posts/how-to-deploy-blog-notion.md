@@ -7,11 +7,8 @@ city: Madrid
 toc: true
 tags:
 - tutorial
-
 - dev
-
 - web
-
 ---
 
 
@@ -38,7 +35,7 @@ Unfortunately, I really struggle to understand the Go API. I have to say that my
 The idea was simple, first we need the credentials to call the unofficial API. This can be obtained opening the developer tools in your Notion workspace webpage and looking for the `token_v2` cookie. I store it in a environment variable and start using the Notion Python Client
 
 
-```Python
+```python
 import os
 from notion.client import NotionClient
 
@@ -50,7 +47,7 @@ client = NotionClient(token_v2=NOTION_TOKEN)
 Then, I need to create a database in Notion to store the content and get its url. The db url is composed of several things: the notion host (obviously), the organization (your username in a personal account), the database or collection identifier and the database view identifier. I did the same and put all of this things in environment variables and construct the url to get the pages
 
 
-```Python
+```python
 cv = client.get_collection_view(
     f"https://www.notion.so/{NOTION_ORG}/{OTHER_COLLECTION_ID}?v={OTHER_COLLECTION_VIEW_ID}")
 database_records = cv.default_query().execute()
@@ -66,7 +63,7 @@ The response is a list of notion pages objects. Let's see how we can extract tho
 Firs, I created a custom `Page` dataclass to encapsulate everything
 
 
-```Python
+```python
 @dataclass
 class Page():
     title: str
@@ -95,7 +92,7 @@ Each one of the attributes of the class is a field in the database with the exce
 We can iterate through the previous pages list to extract the each page and its contents into our custom class. We need to iterate again for the children in the page to update the `blocks` fields
 
 
-```Python
+```python
 for record in database_records:
     if not record.title:  # Empty record, we skip it
         continue
@@ -115,7 +112,7 @@ for record in database_records:
 We are making progress! However we are not done. As I said before, this blocks are just python objects right now with the page block contents. We need to translate them somehow to markdown. In this case I went with the dum and simple route. For each type of block, I implemented a custom function that generates the markdown content. There are quite a few of them some let's see a couple of them
 
 
-```Python
+```python
 def generate_code_block(code_block: CodeBlock):
     return f'\n```{code_block.language}\n{code_block.title}\n```\n'
 
@@ -132,7 +129,7 @@ def generate_bulleted_list(bulleted_list: BulletedListBlock):
 Then I created the following dictionary mapping
 
 
-```Python
+```python
 block_parse_func = {
     "text": generate_text_block,
     "image": generate_image_block,
@@ -150,7 +147,7 @@ block_parse_func = {
 An our previous snippet will be like this
 
 
-```Python
+```python
 for record in database_records:
     if not record.title:
         continue
@@ -179,7 +176,7 @@ Now we have the page contents in markdown! You can see more details for the impl
 Finally, we kist need to save the contents to a file. I used a small jinja template to create the blog posts
 
 
-```Python
+```python
 ---
 title: "{{ page.title }}"
 date: {{ page.date }}
@@ -202,7 +199,7 @@ tags:
 This template is expecting our previous `Page` object and will create the Hugo page. The following code with save our templated file
 
 
-```Python
+```python
 def save_content(page: Page):
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template(f'post.md.j2')
@@ -219,7 +216,7 @@ Easy!
 I created a small script in python to store all this code, a small [`requirements.txt`](https://github.com/pablosjv/pablosanjose.com/blob/main/requirements.txt) file, and setup the repository with a simple [`Makefile`](https://github.com/pablosjv/pablosanjose.com/blob/main/Makefile). Let's run our code
 
 
-```Shell
+```shell
 ❯ make refresh
 2021-02-19 03:37:54 - INFO: Querying blog database
 2021-02-19 03:37:55 - INFO: Geting record: My blog is live!
@@ -236,7 +233,7 @@ my-blog-is-live.md
 Vercel handles the integration with Github seamlessly. Just with a couple of clicks the page was deployed. It also supports the preview of branches and pull request. It is an amazing product. The only modification I needed to do is add the Hugo version with a config file in the repo as the default one quite low
 
 
-```JSON
+```json
 {
     "build": {
         "env": {

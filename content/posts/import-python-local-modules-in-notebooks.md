@@ -7,11 +7,8 @@ city: Madrid
 toc: true
 tags:
 - tutorial
-
 - python
-
 - jupyter
-
 ---
 
 
@@ -20,7 +17,7 @@ I find working in a Jupyter Notebook very useful when developing any type of pyt
 There is a small tweak that you can do to also import your python modules and functions while developing in notebooks. It is very simple but I always struggle to remember it and found it in google
 
 
-```Python
+```python
 %load_ext autoreload
 %autoreload 2
 
@@ -44,7 +41,7 @@ The second part is to add the path to your source code to your `PYTHONPATH` so i
 As a bouns track, I also like to add my environment variables in the notebooks itself when I am debuging something. It as easy as:
 
 
-```Python
+```python
 %env AWS_PROFILE=development
 ```
 

@@ -7,6 +7,5 @@ city: Madrid
 toc: true
 tags:
 - tutorial
-
 ---
 
