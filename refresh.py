@@ -66,7 +66,7 @@ def generate_image_block(image_block: ImageBlock):
 
 
 def generate_code_block(code_block: CodeBlock):
-    return f'\n```{code_block.language}\n{code_block.title}\n```\n'
+    return f'\n```{code_block.language.lower()}\n{code_block.title}\n```\n'
 
 
 def generate_text_block(text_block: TextBlock):
