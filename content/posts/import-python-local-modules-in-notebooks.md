@@ -1,6 +1,6 @@
 ---
 title: "Importing local Python modules in to Jupyter Notebooks"
-date: 2021-02-21
+date: 2021-02-20
 draft: false
 slug: import-python-local-modules-in-notebooks
 city: Madrid
