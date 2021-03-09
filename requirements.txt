@@ -1,3 +1,2 @@
-notion==0.0.28
 requests
 Jinja2

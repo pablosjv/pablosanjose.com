@@ -159,7 +159,8 @@ def main():
 
     logging.info('Querying blog database')
     cv = client.get_collection_view(
-        f"https://www.notion.so/{NOTION_ORG}/{BLOG_COLLECTION_ID}?v={BLOG_COLLECTION_VIEW_ID}")
+        f"https://www.notion.so/{NOTION_ORG}/{BLOG_COLLECTION_ID}?v={BLOG_COLLECTION_VIEW_ID}",
+    )
     database_records = cv.default_query().execute()
     for record in database_records:
         logging.info(f'Geting record: {record.title}')
