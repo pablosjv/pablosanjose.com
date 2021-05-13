@@ -4,7 +4,7 @@ type: page
 ---
 
 
-I am a Software engineer with almost 4 years of professional experience. Currently studying the Master of Science in Analytics at Georgia Tech.
+I am a Software engineer with almost 5 years of professional experience.
 
 Passionate about Software Development, Big Data, and Serverless architectures. A DevOps philosophy advocate.
 
