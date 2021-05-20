@@ -1,8 +1,8 @@
 ---
-title: "My favourite Makefile help"
+title: "The Best Makefile Help"
 date: 2021-03-02
 draft: false
-slug: favourite-makefile-help
+slug: best-makefile-help
 city: Madrid
 toc: true
 tags:
