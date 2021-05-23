@@ -1,6 +1,6 @@
 ---
 title: "Resources for New Students at GaTech OMSA"
-date: 2021-05-30
+date: 2021-05-22
 draft: false
 slug: 
 city: Atlanta, GA

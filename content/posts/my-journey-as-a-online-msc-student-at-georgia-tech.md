@@ -1,6 +1,6 @@
 ---
 title: "My journey as a Online MSc Student at Georgia Tech"
-date: 2021-05-22
+date: 2021-05-16
 draft: true
 slug: 
 city: Atlanta, GA
