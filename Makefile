@@ -3,23 +3,26 @@
 
 export PATH := ./bin:$(PATH)
 
-clean:
+help: ## show help message
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  \033[36m\033[0m\n"} /^[$$()% a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
+
+clean: ## clean artifacts
 	rm -rf ./public || true
 	rm -rf content/posts/* static/public/images/* || true
 
-.venv:
+.venv:  ## create virtualenv
 	python3 -m venv .venv
 
-setup: .venv
+setup: .venv  ## setup project
 	.venv/bin/pip install -r requirements.txt
 
-run:
+run:  ## run the hugo server
 	hugo server --verbose --watch --buildFuture --cleanDestinationDir
 
-ci: refresh
+ci: refresh  ## run CI steps
 	hugo
 
-avatar:
+avatar:  ## get the avatar from github
 	wget -O static/avatar.jpg https://github.com/pablosjv.png
 	convert static/avatar.jpg \
 		-bordercolor white -border 0 \
@@ -30,9 +33,8 @@ avatar:
 		-delete 0 -alpha off -colors 256 static/favicon.ico
 	convert -resize x120 static/avatar.jpg static/apple-touch-icon.png
 
-og:
+og:  ## get OG
 	wget -O static/og-image.png "https://og.caarlos0.dev/Pablo%20San%20Jose%20%7C%20**pablosjv**.png?theme=light&md=1&fontSize=100px&images=https://github.com/pablosjv.png"
 
-# go run cmd/notion/main.go
-refresh: clean
+refresh: clean  ## refresh pages
 	.venv/bin/python refresh.py
