@@ -226,8 +226,6 @@ my-blog-is-live.md
 ```
 
 
-{{< figure caption="" src="/public/images/how-i-deployed-my-personal-blog-with-vercel-+-hugo-+-github-actions-+-notion/5c6be9990e1ffe1be2588a474967828afe972d8c9637f658ecdc18590520fd3b.png" >}}
-
 ## Continuous deployment
 
 Vercel handles the integration with Github seamlessly. Just with a couple of clicks the page was deployed. It also supports the preview of branches and pull request. It is an amazing product. The only modification I needed to do is add the Hugo version with a config file in the repo as the default one quite low
