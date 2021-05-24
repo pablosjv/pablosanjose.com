@@ -14,7 +14,7 @@ tags:
 
 It's been a while since I started about having a website of my own. My goal always has been modest: host a small portfolio, blog, and resume.
 
- I bought my domain a little over a year ago but I never got into it. Lately, I decided to start building my own website. 
+I bought my domain a little over a year ago but I never got into it. Lately, I decided to start building my own website. 
 
 ## Let's see how to host
 
