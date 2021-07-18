@@ -85,7 +85,7 @@ url = "/posts"
 identifier = "resume"
 name = "resume"
 title = "Resume"
-url = "/resume"
+url = "https://bit.ly/pablosanjose-resume"
 
 #### Other not in template
 
