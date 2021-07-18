@@ -3,6 +3,6 @@ title: "{{ page.title }}"
 type: page
 ---
 
-{% for content_block in page.blocks %}
+{% for content_block in page.blocks -%}
 {{ content_block }}
-{% endfor %}
+{%- endfor %}

@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 
 import requests
 from jinja2 import Environment, FileSystemLoader
+
 from notion.block import (BulletedListBlock, CalloutBlock, CodeBlock, DividerBlock, HeaderBlock, ImageBlock,
                           NumberedListBlock, QuoteBlock, SubheaderBlock, SubsubheaderBlock, TextBlock, TodoBlock,
                           ToggleBlock)
@@ -62,7 +63,7 @@ def generate_image_block(image_block: ImageBlock):
     image_folder = f"public/images/{image_folder}"
     reference_image_file = download_image(image_block.source, image_folder)
     # NOTE: double scape brackets to get {{ ... }}
-    return f'{{{{< figure caption="{caption}" src="{reference_image_file}" >}}}}'
+    return f'\n{{{{< figure caption="{caption}" src="{reference_image_file}" >}}}}\n'
 
 
 def generate_code_block(code_block: CodeBlock):
@@ -70,7 +71,7 @@ def generate_code_block(code_block: CodeBlock):
 
 
 def generate_text_block(text_block: TextBlock):
-    return text_block.title
+    return f'\n{text_block.title}\n'
 
 
 def generate_bulleted_list(bulleted_list: BulletedListBlock):
@@ -87,19 +88,19 @@ def generate_todo_block(todo_block: TodoBlock):
 
 
 def generate_header_block(header_block: HeaderBlock):
-    return f"# {header_block.title}"
+    return f"\n# {header_block.title}\n"
 
 
 def generate_subheader_block(subheader_block: SubheaderBlock):
-    return f"## {subheader_block.title}"
+    return f"\n## {subheader_block.title}\n"
 
 
 def generate_subsubheader_block(subsubheader_block: SubsubheaderBlock):
-    return f"### {subsubheader_block.title}"
+    return f"\n### {subsubheader_block.title}\n"
 
 
 def generate_divider_block(divider_block: DividerBlock):
-    return "---"
+    return "\n---\n"
 
 
 def generate_toggle_block(toggle_block: ToggleBlock):
@@ -110,11 +111,11 @@ def generate_toggle_block(toggle_block: ToggleBlock):
 
 
 def generate_quote_block(quote_block: QuoteBlock):
-    return f"> {quote_block.title}"
+    return f"\n> {quote_block.title}\n"
 
 
 def generate_callout_block(callout_block: CalloutBlock):
-    return f"> {callout_block.icon} {callout_block.title}"
+    return f"\n> {callout_block.icon} {callout_block.title}\n"
 
 
 # NOTE: implement using pattern matching
