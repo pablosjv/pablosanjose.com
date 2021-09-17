@@ -45,7 +45,7 @@ Working in Data and ML, I have recently encounter more than one time the number 
 I have searched the web on how to do this, and although is also simple, is not as straightforward as just generating a UUID4. I found 2 approaches that worked quite well.
 
 
-# 1. Time + Namespace
+## 1. Time + Namespace
 
 
 The first approach for me was to make the UUID dependent on two things.
