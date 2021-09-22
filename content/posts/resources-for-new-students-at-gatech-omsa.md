@@ -63,7 +63,7 @@ For each term, the costs are:
 This means that the faster you complete the program, the more money you can save as the mandatory student fee each term.
 
 
-Keep in mind that this doesn't count the costs associated with the bureaucracy I mentioned before, like translating documents or registering for the TOEFL. Keep this in mind when doing your numbers.
+Keep in mind that this doesn't count the costs associated with the bureaucracy I mentioned before, like translating documents or registering for the TOEFL. Don't forget this when doing your numbers.
 
 
 ## Alternatives
