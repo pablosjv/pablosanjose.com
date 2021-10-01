@@ -1,6 +1,6 @@
 ---
-title: ""The University doesn't Prepare You for a Job" - A Survivor Bias Fallacy "
-date: 2021-10-04
+title: "The University does not Prepare You for a Job - A Survivor Bias Fallacy "
+date: 2021-09-29
 draft: false
 slug: university-and-job-survivor-bias
 city: Madrid, S
@@ -18,7 +18,7 @@ There is a common saying inside the software engineering industry that has becom
 > __*"Don't waste your time and money going to college because it is useless"*__. 
 
 
-{{< figure caption="One of the memes I found the other day about the topic" src="/public/images/"the-university-doesn't-prepare-you-for-a-job"---a-survivor-bias-fallacy-/4362ff0d6dd90acdece53605ba6731239d0f74c090c7c8d0bd141a250c06d5dc.png" >}}
+{{< figure caption="One of the memes I found the other day about the topic" src="/public/images/the-university-does-not-prepare-you-for-a-job---a-survivor-bias-fallacy-/4362ff0d6dd90acdece53605ba6731239d0f74c090c7c8d0bd141a250c06d5dc.png" >}}
 
 
 I am firmly believe that this statements are not true. At least, that the reality is greatly misunderstood. For me this kind of thinking demonstrates a lack of maturity in your career growth, as you are not able to identify what is the valuable skills you are providing to your employer and where did they come from. This lack of vision of ourselves in the big picture can be a detriment to our own further development as professionals.
@@ -50,7 +50,7 @@ In general, any major institution will be working towards this objectives with a
 Of course it is out of the question that if you want to pursue a career in research, you will need to spend quite sometime in the university.
 
 
-{{< figure caption="Another funny meme. We can enjoy this type of content, but we must acknowledge the lack of nuance and oversimplification, or otherwise it can lead us to a fallacy ." src="/public/images/"the-university-doesn't-prepare-you-for-a-job"---a-survivor-bias-fallacy-/a7d966c7e70a088a8b636cc58c48e49796f5081aec22329855b79344f45c9ce7.png" >}}
+{{< figure caption="Another funny meme. We can enjoy this type of content, but we must acknowledge the lack of nuance and oversimplification, or otherwise it can lead us to a fallacy ." src="/public/images/the-university-does-not-prepare-you-for-a-job---a-survivor-bias-fallacy-/a7d966c7e70a088a8b636cc58c48e49796f5081aec22329855b79344f45c9ce7.png" >}}
 
 
 ## The Industry Also Innovates and Creates New Knowledge
@@ -77,7 +77,7 @@ Even if you are learning a completely new thing, you are not starting from scrat
 ## College Teaches Useless Stuff
 
 
-{{< figure caption="Some accurate memes" src="/public/images/"the-university-doesn't-prepare-you-for-a-job"---a-survivor-bias-fallacy-/4ea05e7fdfcbb5fbcefeafc95c3d2f245d56ef6e46ebb7278dd8532fc193612d.png" >}}
+{{< figure caption="Some accurate memes" src="/public/images/the-university-does-not-prepare-you-for-a-job---a-survivor-bias-fallacy-/4ea05e7fdfcbb5fbcefeafc95c3d2f245d56ef6e46ebb7278dd8532fc193612d.png" >}}
 
 
 I partially agree on this point. Some college courses I took in the past were an absolute pain, but now I don't use a single thing from them. 
@@ -97,7 +97,7 @@ The definition is tricky because two things that I can identify:
 This is a classic modern statement. I was a firm believer in it when I started working as an engineer. I had the felling that I was googling everything and finding all the answers. My knowledge was expanding by itself, with the aid of the internet. 
 
 
-{{< figure caption="Jerry knows whats the matter" src="/public/images/"the-university-doesn't-prepare-you-for-a-job"---a-survivor-bias-fallacy-/b7923abbeab524c71cc3941ac89d65c1adad91f4198def049a961ab94d2e3b3e.png" >}}
+{{< figure caption="Jerry knows whats the matter" src="/public/images/the-university-does-not-prepare-you-for-a-job---a-survivor-bias-fallacy-/b7923abbeab524c71cc3941ac89d65c1adad91f4198def049a961ab94d2e3b3e.png" >}}
 
 
 I still believe in the internet, but it commonly overlooked the influence of my degree in it. Just the ability to know what look for is high valuable to start with. The internet will eventually ask your question, but the efficiency in which we are able to look for answers is based in or prior knowledge. This knowledge has been obtained with the structure and fundamentals that a college degree provides.

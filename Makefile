@@ -17,10 +17,10 @@ setup: .venv  ## setup project
 	.venv/bin/pip install -r requirements.txt
 
 run:  ## run the hugo server
-	docker run -v $(pwd):/opt/project --workdir /opt/project -p 1313:1313 klakegg/hugo:0.80.0 server --verbose --watch --buildFuture --cleanDestinationDir
+	docker run --rm -it -v $(shell pwd):/src -p 1313:1313 klakegg/hugo:0.80.0 server --verbose --watch --buildFuture --cleanDestinationDir
 
 ci: refresh  ## run CI steps
-	docker run -v $(pwd):/opt/project --workdir /opt/project -p 1313:1313 klakegg/hugo:0.80.0
+	docker run --rm -it -v $(shell pwd):/src klakegg/hugo:0.80.0
 
 avatar:  ## get the avatar from github
 	wget -O static/avatar.jpg https://github.com/pablosjv.png

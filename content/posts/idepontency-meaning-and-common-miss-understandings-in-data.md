@@ -1,6 +1,6 @@
 ---
 title: "Idempotence - Meaning and Common Miss-understandings  in Data Pipelines"
-date: 2021-10-04
+date: 2021-09-30
 draft: false
 slug: idepontency-meaning-and-common-miss-understandings-in-data
 city: Madrid, S
