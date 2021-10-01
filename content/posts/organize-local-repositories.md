@@ -5,6 +5,7 @@ draft: false
 slug: organize-local-repositories
 city: Madrid
 toc: true
+math: false
 tags:
 - github
 - gitlab

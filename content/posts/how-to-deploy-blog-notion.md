@@ -5,6 +5,7 @@ draft: false
 slug: how-to-deploy-blog-notion
 city: Madrid
 toc: true
+math: false
 tags:
 - tutorial
 - dev

@@ -5,6 +5,7 @@ draft: false
 slug: 
 city: Madrid, Spain
 toc: true
+math: false
 tags:
 - dev
 - python

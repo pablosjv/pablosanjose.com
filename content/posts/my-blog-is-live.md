@@ -5,6 +5,7 @@ draft: false
 slug: my-blog-is-live
 city: Madrid
 toc: true
+math: false
 tags:
 - update
 ---

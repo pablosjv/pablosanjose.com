@@ -5,6 +5,7 @@ draft: {{ page.draft | string | lower }}
 slug: {{ page.slug }}
 city: {{ page.city or "Madrid" }}
 toc: true
+math: {{ page.math | string | lower }}
 tags:
 {% for tag in page.tags -%}
 - {{ tag }}
@@ -12,5 +13,5 @@ tags:
 ---
 
 {% for content_block in page.blocks -%}
-{{ content_block }}
+{{ content_block | replace("$$", "$") }}
 {% endfor -%}

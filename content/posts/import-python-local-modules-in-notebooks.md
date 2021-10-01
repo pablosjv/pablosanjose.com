@@ -5,6 +5,7 @@ draft: false
 slug: import-python-local-modules-in-notebooks
 city: Madrid
 toc: true
+math: false
 tags:
 - tutorial
 - python

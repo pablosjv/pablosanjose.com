@@ -5,6 +5,7 @@ draft: false
 slug: 
 city: Atlanta, GA
 toc: true
+math: false
 tags:
 - academia
 ---

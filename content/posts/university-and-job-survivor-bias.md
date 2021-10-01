@@ -1,10 +1,11 @@
 ---
 title: "The University does not Prepare You for a Job - A Survivor Bias Fallacy "
-date: 2021-09-29
+date: 2021-10-04
 draft: false
 slug: university-and-job-survivor-bias
 city: Madrid, S
 toc: true
+math: false
 tags:
 - experiences & life
 - academia

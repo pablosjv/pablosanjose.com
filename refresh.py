@@ -11,9 +11,9 @@ from urllib.parse import urlparse
 import requests
 from jinja2 import Environment, FileSystemLoader
 
-from notion.block import (BulletedListBlock, CalloutBlock, CodeBlock, DividerBlock, HeaderBlock, ImageBlock,
-                          NumberedListBlock, QuoteBlock, SubheaderBlock, SubsubheaderBlock, TextBlock, TodoBlock,
-                          ToggleBlock)
+from notion.block import (BulletedListBlock, CalloutBlock, CodeBlock, DividerBlock, EquationBlock, HeaderBlock,
+                          ImageBlock, NumberedListBlock, QuoteBlock, SubheaderBlock, SubsubheaderBlock, TextBlock,
+                          TodoBlock, ToggleBlock)
 from notion.client import NotionClient
 
 logging.basicConfig(
@@ -32,6 +32,7 @@ class Page():
     tags: List[str] = field(default_factory=list)
     city: str = ""
     draft: bool = False
+    math: bool = False
     filename: str = field(init=False)
     blocks: List[str] = field(default_factory=list)
 
@@ -117,6 +118,9 @@ def generate_quote_block(quote_block: QuoteBlock):
 def generate_callout_block(callout_block: CalloutBlock):
     return f"\n> {callout_block.icon} {callout_block.title}\n"
 
+def generate_equation(equation_block: EquationBlock):
+    return f"\n$$$\n{equation_block.title}\n$$$\n"
+
 
 # NOTE: implement using pattern matching
 block_parse_func = {
@@ -133,6 +137,7 @@ block_parse_func = {
     "toggle": generate_toggle_block,
     "quote": generate_quote_block,
     "callout": generate_callout_block,
+    "equation": generate_equation,
 }
 
 
@@ -174,6 +179,7 @@ def main():
             date=record.date.start,
             tags=record.tags,
             draft=record.draft,
+            math=record.math,
             city=record.city,
         )
         for block in record.children:

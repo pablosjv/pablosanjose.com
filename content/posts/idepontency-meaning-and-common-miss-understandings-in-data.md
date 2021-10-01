@@ -1,10 +1,11 @@
 ---
-title: "Idempotence - Meaning and Common Miss-understandings  in Data Pipelines"
-date: 2021-09-30
+title: "Idempotence - Meaning and Common Miss-understandings in Data Pipelines"
+date: 2021-10-11
 draft: false
 slug: idepontency-meaning-and-common-miss-understandings-in-data
 city: Madrid, S
 toc: true
+math: true
 tags:
 - dev
 - data
@@ -27,10 +28,10 @@ Of course, I like to go to wikipedia:
 > __*Idempotence*__ *is the property of certain operations in mathematics and computer science whereby they can be applied multiple times without changing the result beyond the initial application*.
 
 
-Formally it means that if $$f(x) \rightarrow y$$ then $$f(f(x)) \rightarrow y$$. In other words, you can apply the same function over itself and obtain the same result.
+Formally it means that if $f(x) \rightarrow y$ then $f(f(x)) \rightarrow y$. In other words, you can apply the same function over itself and obtain the same result.
 
 
-This basic definition can be extended if we apply declarative programming. In this paradigm, we define the final state of a system or data, but we don't explicitly define how to achieve it. For certain applications this can mean that  $$f(x) \rightarrow y$$ $$\forall x \in \{\text{Any system state}\}$$. This is extremely powerful.
+This basic definition can be extended if we apply declarative programming. In this paradigm, we define the final state of a system or data, but we don't explicitly define how to achieve it. For certain applications this can mean that  $f(x) \rightarrow y$ $\forall x \in \{\text{Any system state}\}$. This is extremely powerful.
 
 
 ## Computer Science Applications
@@ -43,8 +44,8 @@ This is specially useful when we translate it to the __*state*__ of a system. Fo
 
 We can see this in practice with multiple types of IaaC tools too, which work declarative. In all of this tools, we define (with YAML or other) the final state of the system. :
 
-1. Kubernetes deployments → Deployment of a docker image with $$n $$ replicas
-1. Terraform → This environment has $$n$$ EC2 machines
+1. Kubernetes deployments → Deployment of a docker image with $n $ replicas
+1. Terraform → This environment has $n$ EC2 machines
 1. Ansible playbooks → The following linux packages are installed.
 
 ## Idempotence in Data Pipelines
@@ -56,10 +57,10 @@ Having the definition in mind, and concrete examples of its application: should 
 > *Data pipelines* __*must*__ *be* __*reproducible*__*.* 
 
 
-This has some similarities with idempotence, but is not the same. When working with data, we must be able to recreate results for traceability, auditing, and resilience against data loss. However, when looking at the formal definition of idempotence, $$f(f(x)) \rightarrow y$$ , most of the time it doesn't make sense.
+This has some similarities with idempotence, but is not the same. When working with data, we must be able to recreate results for traceability, auditing, and resilience against data loss. However, when looking at the formal definition of idempotence, $f(f(x)) \rightarrow y$ , most of the time it doesn't make sense.
 
 
-In data pipelines our $$x$$ is not a state, its a dataset. And our $$y$$ is a different dataset. In our data pipelines we should be overwriting our data, but instead creating new dataset with our transformations. In this case, all we need is a __*deterministic process*__. We only need that $$f(x) \rightarrow y$$ at any point in time.
+In data pipelines our $x$ is not a state, its a dataset. And our $y$ is a different dataset. In our data pipelines we should be overwriting our data, but instead creating new dataset with our transformations. In this case, all we need is a __*deterministic process*__. We only need that $f(x) \rightarrow y$ at any point in time.
 
 
 The exception to this rule is when loading data tables in our data warehouse or other storage systems. In this case you want that idempotence. A load of the same data yields always the same result in the final table.
