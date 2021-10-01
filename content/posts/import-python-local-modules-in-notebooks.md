@@ -10,6 +10,8 @@ tags:
 - python
 - jupyter
 - dev
+- data
+- machine-learning
 ---
 
 
