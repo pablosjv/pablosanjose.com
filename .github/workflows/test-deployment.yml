@@ -1,14 +1,10 @@
-name: scheduled
+name: test-deployment
 on:
-  push:
-    branches: [master]
-  schedule:
-    - cron: "0 0 */1 * *"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   build:
-    name: Scheduled refresh
+    name: Test deployment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,6 +24,5 @@ jobs:
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          vercel-args: '--prod' # Optional
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  # Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required
