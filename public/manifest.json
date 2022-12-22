@@ -1,5 +1,5 @@
 {
-  "name": "Pablo San Jose",
+  "name": "Pablo San Jose - Blog",
   "short_name": "pablosanjose.com",
   "icons": [
     {
@@ -33,7 +33,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#F898B9",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone"
 }
